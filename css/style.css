@@ -1,0 +1,267 @@
+
+.body-page { 
+  width: 600px; /* Lebar dari container utama halaman adalah 600 piksel */
+  background-color: rgb(250, 250, 252); /* Warna latar belakang adalah biru muda yang sangat pucat */
+  padding: 10px; /* Ruang dalam dari tepi container ke kontennya adalah 10 piksel */
+}
+
+p {
+  text-align: justify; /* Teks pada elemen paragraf akan diratakan ke kiri dan kanan */
+}
+
+.mt-10 {
+  margin-top: 10px; /* Memberikan ruang atas sebesar 10 piksel pada elemen */
+}
+
+.mt-4 {
+  margin-top: 4px; /* Memberikan ruang atas sebesar 4 piksel pada elemen */
+}
+
+label {
+  font-weight: bold; /* Teks label akan ditebalkan */
+}
+
+.form{
+  background-color: #e5e7eb; /* Warna latar belakang dari elemen dengan kelas 'form' adalah abu-abu muda */
+  padding: 20px; /* Ruang dalam dari elemen form adalah 20 piksel */
+  padding-top: 0;
+}
+
+.fitur_ol {
+  padding-inline-start: 15px; /* Padding di sisi dalam dari list order akan 15 piksel */
+  margin-top: 0; /* Tidak ada ruang atas tambahan pada list order */
+}
+
+.text-center {
+  text-align: center; /* Teks akan diratakan ke tengah */
+}
+
+.flex-center, #contentoverweight {
+  display: flex; /* Menggunakan model layout flexbox */
+  justify-content: center; /* Menengahkan item-item flex secara horizontal */
+  flex-direction: column; /* Menata item-item flex dalam arah vertikal */
+  align-items: center; /* Menengahkan item-item flex secara vertikal */
+}
+
+#contentoverweight {
+  background-color: #e5e7eb; /* Warna latar belakang adalah abu-abu muda */
+  padding: 10px; /* Padding 10 piksel di semua sisi */
+}
+
+#contentoverweight h4 {
+  margin-top: 0px; /* Menghilangkan margin atas untuk elemen h4 di dalam #contentoverweight */
+}
+
+h4 {
+  margin-bottom: 10px; /* Memberikan margin bawah sebesar 10 piksel untuk semua elemen h4 */
+}
+
+hr {
+  width: 600px; /* Lebar garis horizontal adalah 600 piksel */
+  margin-top: 20px; /* Margin atas adalah 20 piksel */
+  margin-bottom: 20px; /* Margin bawah adalah 20 piksel */
+  border: 0; /* Menghilangkan semua border */
+  border-top: 1px solid #eee; /* Menambahkan border atas dengan warna abu-abu sangat muda */
+}
+
+#downloadBmi, .btn {
+  /* Gaya dasar untuk tombol */
+  background-color: rgb(26,115,232); /* Warna latar belakang tombol */
+  color: white; /* Warna teks */
+  padding: 10px 20px; /* Padding di dalam tombol */
+  border: none; /* Tidak ada border */
+  border-radius: 5px; /* Sudut yang membulat */
+  cursor: pointer; /* Ubah kursor menjadi pointer saat mouse di atasnya */
+  outline: none; /* Hapus outline yang muncul saat tombol difokuskan */
+  transition: box-shadow 0.2s, transform 0.2s; /* Transisi halus untuk bayangan dan transformasi */
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.2); /* Bayangan luar untuk efek terangkat */
+  user-select: none; /* Mencegah teks tombol dipilih */
+}
+
+#downloadBmi:hover, .btn:hover {
+  background-color: rgb(26,115,232); /* Warna latar belakang saat hover atau klik */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); /* Tambahkan bayangan saat hover atau klik */
+  color: #f1f1f1; /* Warna teks gelap saat hover atau klik */
+}
+/* Gaya tambahan untuk reset button */
+.btn-reset {
+  background-color: white; /* Latar belakang putih */
+  color: #000000; /* Warna teks hitam untuk kontras */
+}
+
+.btn-reset:hover{
+  background-color: #f2f2f2; /* Warna latar belakang saat hover atau klik */
+  color: #333; /* Warna teks gelap saat hover atau klik */
+}
+
+#downloadBmi:active, .btn:active {
+  /* Mengurangi bayangan dan 'menekan' tombol ke bawah */
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.1); /* Bayangan yang lebih kecil dan lebih ringan */
+  transform: translateY(2px); /* Geser tombol sedikit ke bawah */
+  background-color: rgb(22, 97, 207); /* Warna latar belakang yang sedikit lebih gelap saat ditekan */
+}
+
+.btn-reset:active {
+  /* Mengurangi ukuran bayangan untuk membuat efek tertekan */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  /* Mengubah posisi bayangan untuk memberikan ilusi bahwa tombol ditekan ke dalam */
+  background-color: white; /* Latar belakang putih */
+  color: #000000; /* Warna teks hitam untuk kontras */
+  transform: translateY(1px);
+}
+
+.hasil_ol {
+  list-style: none; /* Menghilangkan gaya daftar/list, seperti angka atau bullet points */
+  margin-top: 0; /* Menghilangkan margin atas, sehingga daftar menempel ketat ke elemen di atasnya */
+  margin-bottom: 10px; /* Memberikan sedikit ruang (margin) di bawah daftar sebesar 10 piksel */
+}
+
+.app-download {
+  display: flex;
+  justify-content: center; /* Menengahkan anak-anak secara horizontal */
+  flex-wrap: wrap; /* Mengizinkan anak-anak untuk wrap jika tidak muat */
+  gap: 10px; /* Memberikan jarak antar item */
+}
+
+.app-download h4 {
+  width: 100%; /* Memastikan judul juga berada di tengah */
+  text-align: center; /* Menengahkan teks judul */
+}  
+/* Style tambahan jika ingin menambahkan margin bawah pada tautan */
+.app-download a {
+  margin-bottom: 10px; /* Memberikan spasi bawah pada tautan */
+}
+
+
+input[type="number"] {
+  width: 97%; /* Lebar dari input teks adalah 97% dari container-nya */
+}
+
+.gender-radio-group {
+  display: flex; /* Menggunakan flexbox */
+  align-items: center; /* Menyejajarkan item-item flex secara vertikal */
+  gap: 10px; /* Memberikan ruang antara label dan input */
+}
+
+.gender-radio-group label {
+  margin-top: 0; /* Menghilangkan margin atas jika ada */
+}
+/* Gaya untuk radio button */
+.gender-radio-group input[type="radio"] {
+  margin-top: 0; /* Menghilangkan margin atas jika ada */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Gaya untuk pseudo-elemen yang akan menampilkan lingkaran biru saat hover */
+.gender-radio-group input[type="radio"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgb(26,115,232);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Saat radio button di-hover, tampilkan lingkaran biru besar */
+.gender-radio-group input[type="radio"]:hover::before,
+.gender-radio-group input[type="radio"]:focus::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Menghilangkan efek hover setelah radio button terpilih */
+.gender-radio-group input[type="radio"]:checked:hover::before,
+.gender-radio-group input[type="radio"]:checked:focus::before {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+/* Saat radio button terpilih, tampilkan titik biru kecil di tengah */
+.gender-radio-group input[type="radio"]:checked::before {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(26,115,232);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Mengubah latar belakang dan border saat radio button terpilih */
+.gender-radio-group input[type="radio"]:checked {
+  background-color: #fff;
+  border-color: rgb(26,115,232);
+}
+
+/* Gaya untuk pseudo-elemen yang akan menampilkan titik putih di tengah saat hover */
+.gender-radio-group input[type="radio"]:hover::after,
+.gender-radio-group input[type="radio"]:focus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Menghilangkan efek hover setelah radio button terpilih */
+.gender-radio-group input[type="radio"]:checked:hover::after,
+.gender-radio-group input[type="radio"]:checked:focus::after {
+    background-color: transparent;
+}
+
+.floating-label-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px; /* Atur tinggi untuk menyesuaikan dengan input */
+  background: #e5e7eb; /* Warna latar belakang yang sama dengan form */
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.floating-label-group input[type="number"] {
+  background-color: #e5e7eb;
+  border: none; /* Menghilangkan border karena border akan ditambahkan pada group */
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1; /* Input akan mengisi ruang yang tersedia */
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 10px;
+  background: #e5e7eb; /* Warna latar belakang yang sama dengan form */
+  transition: all 0.3s ease;
+  pointer-events: none; /* Agar label tidak menghalangi klik ke input */
+}
+
+.floating-label-group input[type="number"]:not(:placeholder-shown) + label,
+.floating-label-group input[type="number"]:focus + label {
+  top: -5px; /* Posisi melayang di atas input */
+  left: 10px;
+  font-size: 12px;
+  color: black;
+  padding: 0 2px;
+}
+
+/* Trik untuk 'menghapus' border di belakang label */
+.floating-label-group input[type="number"]:focus + label,
+.floating-label-group input[type="number"]:not(:placeholder-shown) + label {
+  background: #e5e7eb; /* Warna latar belakang yang sama dengan form */
+}
