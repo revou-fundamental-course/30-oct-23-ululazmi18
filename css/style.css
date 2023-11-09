@@ -50,6 +50,9 @@ margin-top: 30px;
 .mt-10 {
 margin-top: 10px;
 }
+.form.text-center.full-width {
+  padding-bottom: 30px;
+}
 .aligned-ol {
 padding-inline-start: 15px;
 margin-top: -15px;
