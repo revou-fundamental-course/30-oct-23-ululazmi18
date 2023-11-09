@@ -13,7 +13,7 @@
             <div class="flex-item">
                 <p>badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
                 <div class="flex-container ">
-                <form id="frmbmi" class="border">
+                <form id="frmbmi" class="border-lightgrey">
                     <div>
                     <label>Jenis Kelamin</label>
                     <div class="gender-radio-group mt-10">
@@ -25,19 +25,22 @@
                     </div>
 
                     <div class="floating-label-group">
-                        <input name="bmiWeight" type="number" id="bmiWeight" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
+                        <input name="bmiWeight" type="number" id="bmiWeight" min="18" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
                         <label for="bmiWeight">Berat Badan (kg)</label>
                     </div>
+                    <small style="color: gray;">Minimal berat badan 18 kg.</small>
 
                     <div class="floating-label-group">
-                        <input name="bmiAge" type="number" id="bmiAge" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
+                        <input name="bmiAge" type="number" id="bmiAge" min="18" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
                         <label for="bmiAge">Usia (tahun)</label>
                     </div>
+                    <small style="color: gray;">Minimal usia 18 tahun</small>
 
                     <div class="floating-label-group">
-                        <input name="bmiHeight" type="number" id="bmiHeight" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
+                        <input name="bmiHeight" type="number" id="bmiHeight" min="130" onkeypress="return OnlyNumbers(event);" placeholder=" " required autocomplete="off">
                         <label for="bmiHeight">Tinggi Badan (cm)</label>
                     </div>
+                    <small style="color: gray;">Minimal tinggi badan 130 cm.</small>
 
                     <div class="mt-10">
                         <button type="button" id="calculateBmiBtn" class="btn">Hitung BMI</button>
@@ -95,53 +98,58 @@
                 <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
             </div>
             </div>
-                <div id="contentoverweight"  class="full-width text-center" style="display: none;">
-                    <br>
-                    <h4>Beberapa penyakit yang berasal dari kegemukan</h4>
-                    <ol class="list-none">
-                        <li>
-                            Diabetes
-                        </li>
-                        <li>
-                            Hipertensi
-                        </li>
-                        <li>
-                            Sakit Jantung
-                        </li>
-                        <li>
-                            Osteoarthritis
-                        </li>
-                    </ol>
+            
+            <div id="contentoverweight" class="full-width text-center mt-20" style="display: none;">
+                <button type="button" id="BacktoTopBtn" class="btn btn-reset">Kembali ke Atas</button>
+                <br>
+                <h4>Beberapa penyakit yang berasal dari kegemukan</h4>
+                <ol class="list-none aligned-ol">
+                    <li>
+                        Diabetes
+                    </li>
+                    <li>
+                        Hipertensi
+                    </li>
+                    <li>
+                        Sakit Jantung
+                    </li>
+                    <li>
+                        Osteoarthritis
+                    </li>
+                </ol>
 
-                    <div class="btn-margin">
-                        <a href="" target="_blank" class="btn">Konsultasi Dokter Via Aplikasi</a>
-                        <a href="" target="_blank" class="btn">Registrasi Online Sekarang</a>
-                    </div>
+                <div class="btn-margin">
+                    <a href="" target="_blank" class="btn">Konsultasi Dokter Via Aplikasi</a>
+                    <a href="" target="_blank" class="btn">Registrasi Online Sekarang</a>
                 </div>
-                <div id="contentunderweight"  class="full-width text-center" style="display:none;">
-                    <br>
-                    <h4>Berat rendah dapat menyebabkan berbagai masalah penyakit</h4>
-                    <ol class="list-none">
-                        <li>
-                            Infertilitas
-                        </li>
-                        <li>
-                            Anemia
-                        </li>
-                        <li>
-                            Osteoporosis
-                        </li>
-                        <li>
-                            Sistem Imun Lemah
-                        </li>
-                    </ol>
+            </div>
 
-                    <div>
-                        <a href="" target="_blank" class="btn">Konsultasi Dokter Via Aplikasi</a>
-                        <a href="" target="_blank" class="btn">Registrasi Online Sekarang</a>
-                    </div>
+            <div id="contentunderweight"  class="full-width text-center mt-20" style="display:none;">
+                <button type="button" id="BacktoTopBtn" class="btn btn-reset">Kembali ke Atas</button>
+                <br>
+                <h4>Berat rendah dapat menyebabkan berbagai masalah penyakit</h4>
+                <ol class="list-none aligned-ol">
+                    <li>
+                        Infertilitas
+                    </li>
+                    <li>
+                        Anemia
+                    </li>
+                    <li>
+                        Osteoporosis
+                    </li>
+                    <li>
+                        Sistem Imun Lemah
+                    </li>
+                </ol>
+
+                <div>
+                    <a href="" target="_blank" class="btn">Konsultasi Dokter Via Aplikasi</a>
+                    <a href="" target="_blank" class="btn">Registrasi Online Sekarang</a>
                 </div>
-
+            </div>
+        </div>
+        
         <div class="full-width text-center">
             <div class="app-download">
                 <h4>Download Aplikasi</h4>
@@ -154,8 +162,8 @@
                 </a>
             </div>
         </div>
-        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/script.js"></script>

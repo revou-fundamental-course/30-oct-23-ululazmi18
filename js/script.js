@@ -1,6 +1,33 @@
 $(document).ready(function() {
-    $('#bmiWeight, #bmiHeight, #bmiAge, input[name="gender"]').on('input focus', function() {
-        if ($(this).val() !== '') {
+    $('input[name="gender"]').on('input', function() {
+        if ($(this).is(':checked')) {
+            $(this).removeClass('input-error');
+        }
+    });
+
+    $('#bmiAge').on('input', function() {
+        var age = parseFloat($(this).val());
+        if (age !== '' && age < 18) {
+            $(this).addClass('input-error');
+        } else {
+            $(this).removeClass('input-error');
+        }
+    });
+
+    $('#bmiWeight').on('input', function() {
+        var weight = parseFloat($(this).val());
+        if (weight !== '' && weight < 18) {
+            $(this).addClass('input-error');
+        } else {
+            $(this).removeClass('input-error');
+        }
+    });
+
+    $('#bmiHeight').on('input', function() {
+        var height = parseFloat($(this).val());
+        if (height !== '' && height < 130) {
+            $(this).addClass('input-error');
+        } else {
             $(this).removeClass('input-error');
         }
     });
@@ -13,16 +40,22 @@ function hitungbmi() {
     var jenisKelamin = $("input[name='gender']:checked").val();
 
     if (berat && tinggi && umur && jenisKelamin) {
-        if (umur < 18) {
+        if (umur < 18 || berat < 18 || tinggi < 130) {
+            var errorMessage = "Ada masalah dalam input:";
+            if (umur < 18) {
+                errorMessage += "\n- Usia kurang dari 18 tahun.";
+            }
+            if (berat < 18) {
+                errorMessage += "\n- Berat badan minimal 18 kg.";
+            }
+            if (tinggi < 130) {
+                errorMessage += "\n- Tinggi badan minimal 130 cm.";
+            }
             Swal.fire({
-                icon: "error",
+                icon: "info",
                 title: "Informasi !",
-                text: "Kalkulator ini hanya tersedia untuk usia 18 tahun ke atas."
+                text: errorMessage
             });
-            $("#bmiWeight").removeClass("input-error");
-            $("#bmiHeight").removeClass("input-error");
-            $("#bmiAge").removeClass("input-error");
-            $("input[name='gender']").removeClass("input-error");
         } else {
             var bmi = berat / (tinggi * tinggi);
 
@@ -81,11 +114,6 @@ function hitungbmi() {
 
 function clearbmi() {
     $("#frmbmi").trigger("reset");
-    
-    $("#bmiWeight").removeClass("input-error");
-    $("#bmiHeight").removeClass("input-error");
-    $("#bmiAge").removeClass("input-error");
-    $("input[name='gender']").removeClass("input-error");
 
     document.getElementById("contenthasil").style.display = "none";
     document.getElementById("contentoverweight").style.display = "none";
@@ -100,7 +128,11 @@ function clearbmi() {
     window.location.href = '#datapengguna';
 }
 
+function kembalikeatas() {
+    window.location.href = '#datapengguna';
+}
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('calculateBmiBtn').addEventListener('click', hitungbmi);
     document.getElementById('resetBmiBtn').addEventListener('click', clearbmi);
+    document.getElementById('BacktoTopBtn').addEventListener('click', kembalikeatas);
 });
