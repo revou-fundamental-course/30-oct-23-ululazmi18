@@ -176,6 +176,9 @@ padding: 0 2px;
 .floating-label-group input[type="number"]:not(:placeholder-shown) + label {
 background: #e5e7eb; /* Warna latar belakang yang sama dengan form */
 }
+.input-error {
+  border: 1px solid red !important; /* Atur warna border merah */
+}
 .btn {
 /* Gaya dasar untuk tombol */
 background-color: rgb(26,115,232); /* Warna latar belakang tombol */
