@@ -5,10 +5,16 @@ function hitungbmi() {
     var tinggi = $("#bmiHeight").val()/100;
     // Mengambil umur dari input dengan ID 'bmiAge'
     var umur = $("#bmiAge").val();
+    // Pindahkan fokus halaman ke elemen dengan ID 'hasil'
+    window.location.href = '#hasil';
     
     // Jika umur kurang dari 18 tahun, tampilkan pesan peringatan
     if (umur < 18) {
-        mscAlert("Informasi !", "Kalkulator hanya untuk 18 tahun ke atas");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Informasi !, Kalkulator hanya untuk 18 tahun ke atas"
+          });
     } else {
         // Hitung BMI menggunakan rumus berat/(tinggi*tinggi)
         var bmi = berat / (tinggi * tinggi);
@@ -50,11 +56,9 @@ function hitungbmi() {
             document.getElementById("contentoverweight").style.display = "block";
         }
         
-        // Fungsi downloadPdf belum didefinisikan di sini
-        downloadPdf(bmi);
-        // Pindahkan fokus halaman ke elemen dengan ID 'hasil'
-        window.location.href = '#hasil';
     }
+    // Pindahkan fokus halaman ke elemen dengan ID 'hasil'
+    window.location.href = '#hasil';
 }
 
 function clearbmi() {
@@ -84,60 +88,3 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener untuk tombol 'Reset'
     document.getElementById('resetBmiBtn').addEventListener('click', clearbmi);
 });
-
-function downloadPdf(hasil) {
-    // Membuat objek 'send' yang berisi data untuk dikirim ke server
-    var send = {
-        // Mengambil nilai yang dipilih untuk input 'gender'
-        jenisKelamin: document.querySelector('input[name="gender"]:checked').value,
-        // Mengambil nilai dari input berat badan
-        berat: $("#bmiWeight").val(),
-        // Mengambil nilai dari input tinggi badan
-        tinggi: $("#bmiHeight").val(),
-        // Mengambil nilai dari input usia
-        usia: $("#bmiAge").val(),
-        // Memformat hasil BMI ke satu tempat desimal dan mengonversinya ke string
-        bmi: hasil.toFixed(1).toString(),
-    };
-    // Memanggil fungsi 'insertDataBmi' dengan objek 'send' dan fungsi callback
-    insertDataBmi(send, function (response) {
-        // Mengecek apakah respons dari server menunjukkan keberhasilan
-        if (response.success) {
-            // Jika sukses, memanggil fungsi 'pdfNew2' dengan data respons
-            pdfNew2(response.data);
-        } else {
-            // Jika terjadi kesalahan, menampilkan pesan error
-            mscAlert("Error", "Something Went Wrong");
-        }
-    });
-}
-
-function insertDataBmi(data, onSuccess) {
-    // Kirim permintaan AJAX dengan metode POST ke endpoint server "addBmiData"
-    // 'data' merupakan objek yang berisi data yang akan dikirim
-    // 'onSuccess' adalah fungsi callback yang dipanggil ketika permintaan berhasil
-    AJAX("POST", "addBmiData", data, onSuccess, "application/x-www-form-urlencoded; charset=UTF-8");
-}
-
-function pdfNew2(pdf64) {
-    // Periksa apakah variabel 'pdf64' memiliki nilai
-    if (pdf64) {
-        // Membuat URI data untuk PDF dengan menggunakan data base64 yang diterima
-        var uri = `data:application/pdf;base64,${pdf64}`;
-        // Mengatur atribut 'href' untuk elemen link dengan ID 'downloadBmi'
-        // sehingga pengguna dapat mengklik dan mendownload file PDF
-        $("#downloadBmi").attr("href", uri);
-    }
-}
-
-function loading(condition, actionname) {
-    // Periksa nilai 'condition'
-    if (!condition) {
-        // Jika 'condition' bernilai false, tampilkan pesan "loading" di konsol
-        console.log("loading");
-    } else {
-        // Jika 'condition' bernilai true, tampilkan pesan "loading" di konsol
-        // (Fungsi ini tampaknya tidak melakukan apa-apa yang berbeda berdasarkan kondisi)
-        console.log("loading");
-    }
-}
